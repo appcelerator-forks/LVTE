@@ -1,0 +1,9 @@
+<Alloy>
+	<Window id="wrapper" title="GOSCO For School" backgroundImage="/images/background.png" fullscreen="true" navBarHidden="true">
+		 <ImageView image="/images/logo.png" top="20" left="20" opacity="0.8" width="100" height="100" />
+		 <View class="wfill hsize vert"  >
+		 	
+		 	<Label textAlign="center" class="hsize wfill h4 whiteColor" >Load LEO VTE Data...</Label>
+		 </View> 
+    </Window>
+</Alloy>

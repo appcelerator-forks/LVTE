@@ -1,0 +1,10 @@
+<Alloy>
+	<Window id="win" title="Dashboard" backgroundImage="/images/background.png">
+		 
+		<View layout="vertical" id="loadingBar" height="0" width="120" borderRadius="15" backgroundColor="#2E2E2E" >
+			<ActivityIndicator id="activityIndicator" />
+			<Label top="5" class="center" text="Loading" color="#ffffff" />
+		</View> 
+		<ImageView image="/images/logo.png" top="20" left="20" opacity="0.8" width="80" height="80" /> 
+    </Window>
+</Alloy>

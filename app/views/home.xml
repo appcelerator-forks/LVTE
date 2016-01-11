@@ -1,0 +1,25 @@
+<Alloy>
+	<Window id="win" title="Dashboard" backgroundImage="/images/background.png"  navBarHidden="true">
+		 
+		<View layout="vertical" id="loadingBar" height="0" width="120" borderRadius="15" backgroundColor="#2E2E2E" >
+			<ActivityIndicator id="activityIndicator" />
+			<Label top="5" class="center" text="Loading" color="#ffffff" />
+		</View> 
+		<ImageView image="/images/logo.png" top="20" left="20" opacity="0.8" width="100" height="100" />
+		
+		<View bottom="60" class="wfill" height="50"  >
+			<View class="horz wfill ">
+				<View backgroundColor="#7BBC31" class=" padding " opacity="0.8" height="40" width="45%">
+					<Label class="center whiteColor wsize">Login</Label>
+				</View>
+				<View backgroundColor="#7BBC31" class=" padding whiteColor" opacity="0.8" height="40" width="auto">
+					<Label class="center whiteColor  wsize">Sign Up</Label>
+				</View>
+			</View>
+		</View> 
+		<View bottom="10" class="wfill" height="50"  >
+			<ImageView image="/images/leo-logo.png"   left="10" height="30" />
+			<ImageView image="/images/leo-lion-logo.png"   right="10"   height="35" />
+		</View> 
+    </Window>
+</Alloy>
