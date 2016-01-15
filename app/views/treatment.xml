@@ -1,0 +1,16 @@
+<Alloy>
+	<Window id="win" class="vert" title="Menu" navBarHidden="true" backgroundColor="efefef">
+	<Label id="buttonback" onClick="doBack" class="h4" text="< VTE Treatment" top="10" width="Ti.UI.FILL" height="50" color="black" left="10" />
+	<View backgroundColor="#7BBC31" class="wfill" height="2" opacity="0.8" left="10" right="10"></View>
+	<Label class="h1 wsize hsize" text="0.5ml" color="red" top="20"></Label>
+	<Label class="h3 wsize hsize" text="syringe" color="red"></Label>
+	<ImageView image="/images/syringe.png" height="50" width="100" top="10"></ImageView>
+	<Label class="h2 wsize hsize" text="To inject :" color="black" top="40"></Label>
+	<View class="horz hsize wsize" left="60">
+		<Label class="h3 wsize hsize" text="0.35ml" color="red" right="5" ></Label>
+		<Label class="h3 wsize hsize" text="once daily" color="black"></Label>
+	</View>
+	<View id="viewcal" backgroundColor="#a5a5a5" class="wfill" height="200"></View>
+	<View backgroundColor="#7BBC31" class="wfill" height="10" opacity="0.8" left="10" right="10"></View>
+    </Window>
+</Alloy>

@@ -1,18 +1,19 @@
 <Alloy>
 	<Window id="win" title="Dashboard" backgroundImage="/images/background.png"  navBarHidden="true">
-		 
 		<View layout="vertical" id="loadingBar" height="0" width="120" borderRadius="15" backgroundColor="#2E2E2E" >
 			<ActivityIndicator id="activityIndicator" />
 			<Label top="5" class="center" text="Loading" color="#ffffff" />
 		</View> 
+		<View id="loginview" class="wfill padding-left padding-right vert"  backgroundColor="white" height="150" opacity="0.0"></View>
+		<View id="signupview" class="wfill vert"  backgroundColor="white" opacity="0.0" height="Ti.UI.SIZE"></View>
 		<ImageView image="/images/logo.png" top="20" left="20" opacity="0.8" width="100" height="100" />
 		
 		<View bottom="60" class="wfill" height="50"  >
 			<View class="horz wfill ">
-				<View backgroundColor="#7BBC31" class=" padding " opacity="0.8" height="40" width="45%">
-					<Label class="center whiteColor wsize">Login</Label>
+				<View backgroundColor="#7BBC31" class=" padding " opacity="0.8" height="40" width="45%" onClick="doLogin">
+					<Label class="center whiteColor wsize"  >Login</Label>
 				</View>
-				<View backgroundColor="#7BBC31" class=" padding whiteColor" opacity="0.8" height="40" width="auto">
+				<View backgroundColor="#7BBC31" class=" padding whiteColor" opacity="0.8" height="40" width="auto" onClick="doSignUp">
 					<Label class="center whiteColor  wsize">Sign Up</Label>
 				</View>
 			</View>

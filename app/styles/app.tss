@@ -129,6 +129,12 @@ overrode the settings with other TSS, XML, or JS settings:
 	bottom: 10
 }, 
 
+".padding-lrt":{
+	left:10,
+	right:10,
+	top:10,
+}
+
 '.box':{
 	borderRadius: "5",
 	borderColor: "#dfe0e4",
@@ -143,6 +149,10 @@ overrode the settings with other TSS, XML, or JS settings:
 
 ".rounded":{
 	borderRadius: 4
+},
+
+".rounded-small":{
+	borderRadius: 2
 },
 
 ".bottom":{
