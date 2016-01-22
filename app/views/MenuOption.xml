@@ -1,11 +1,11 @@
 <Alloy>
-	<Window id="win" title="Menu" backgroundImage="/images/background.png"  navBarHidden="true">
+	<Window id="win" title="Menu" backgroundImage="/images/background.png"  navBarHidden="true" >
 		<ImageView image="/images/logo.png" top="20" left="10" opacity="0.8" width="80" height="80" onClick="doBack" />
 		 <View class="vert wfill hsize" bottom="20" >
-				<Label class="center whiteColor padding-lrt rounded-small" backgroundColor="#7BBC31" opacity="0.8" height="40" width="Ti.UI.FILL" onClick="navToTreat">Disease Information</Label>
+				<Label class="center whiteColor padding-lrt rounded-small" backgroundColor="#7BBC31" opacity="0.8" height="40" width="Ti.UI.FILL" >Disease Information</Label>
 				<Label class="center whiteColor padding-lrt rounded-small" backgroundColor="#7BBC31" opacity="0.8" height="40" width="Ti.UI.FILL">Risk Calculator</Label>
 				<Label class="center whiteColor padding-lrt rounded-small" backgroundColor="#7BBC31" opacity="0.8" height="40" width="Ti.UI.FILL">Guidlines & Treatment</Label>
-				<Label class="center whiteColor padding-lrt rounded-small" backgroundColor="#7BBC31" opacity="0.8" height="40" width="Ti.UI.FILL">innohep & Dose Calculator</Label>
+				<Label class="center whiteColor padding-lrt rounded-small" backgroundColor="#7BBC31" opacity="0.8" height="40" width="Ti.UI.FILL" onClick="navToTreat">innohep & Dose Calculator</Label>
 				<Label class="center whiteColor padding-lrt rounded-small" backgroundColor="#7BBC31" opacity="0.8" height="40" width="Ti.UI.FILL">Patient Education Tools</Label>
 				<Label class="center whiteColor padding-lrt rounded-small" backgroundColor="#7BBC31" opacity="0.8" height="40" width="Ti.UI.FILL">Patient Story / Webminar</Label>
 		 </View>

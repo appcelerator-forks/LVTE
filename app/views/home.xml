@@ -4,8 +4,8 @@
 			<ActivityIndicator id="activityIndicator" />
 			<Label top="5" class="center" text="Loading" color="#ffffff" />
 		</View> 
-		<View id="loginview" class="wfill padding-left padding-right vert"  backgroundColor="white" height="150" opacity="0.0"></View>
-		<View id="signupview" class="wfill vert"  backgroundColor="white" opacity="0.0" height="Ti.UI.SIZE"></View>
+		<View id="loginview" class="wfill padding-left padding-right vert"  backgroundColor="white" height="180" opacity="0.8"></View>
+		<View id="signupview" class="wfill vert"  backgroundColor="white" height="Ti.UI.SIZE" opacity="0.8"></View>
 		<ImageView image="/images/logo.png" top="20" left="20" opacity="0.8" width="100" height="100" />
 		
 		<View bottom="60" class="wfill" height="50"  >
@@ -18,7 +18,7 @@
 				</View>
 			</View>
 		</View> 
-		<View bottom="10" class="wfill" height="50"  >
+		<View bottom="10" class="wfill" height="50"  >se
 			<ImageView image="/images/leo-logo.png"   left="10" height="30" />
 			<ImageView image="/images/leo-lion-logo.png"   right="10"   height="35" />
 		</View> 

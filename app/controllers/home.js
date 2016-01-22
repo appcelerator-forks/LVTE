@@ -8,34 +8,29 @@ var spe = ['Anesthesiology','Dermatology','Electrophysiology','Hematology','Neur
 init();
  
 /* Start - Login Part */ 
-var labellogin = Ti.UI.createLabel({
+var labellogin = $.UI.create("Label",{
 	text: "Login",
 	height: 30,
 	color: "#7BBC31",
-	//width: "30%",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 }) ;
 
-var textfieldname = Ti.UI.createTextField({
-	height: 30,
-	width: Ti.UI.FILL,
-	left: 10,
-	right: 10,
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-	hintText: "Email Address"
+var textfieldname = $.UI.create("TextField",{
+	hintText: "Email Address",
+	hintTextColor:'#c0bfc0',
+	color: "black",
+	
 });
 
-var textfieldpass = Ti.UI.createTextField({
-	height: 30,
-	width: Ti.UI.FILL,
-	left: 10,
-	right: 10,
-	top:10,
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+var textfieldpass = $.UI.create("TextField",{
 	passwordMask:true,
-	hintText: "Password"
+	hintText: "Password",
+	hintTextColor:'#c0bfc0',
+	color: "black",
+	
 });
 
-var loginbutton = Ti.UI.createButton ({
+var loginbutton = $.UI.create("Button",{
 	height: 30,
 	width: "48%",
 	title: "OK",
@@ -45,10 +40,7 @@ var loginbutton = Ti.UI.createButton ({
 
 loginbutton.addEventListener("click",function (e){
 	Alloy.Globals.Navigator.open("MenuOption");
-	//do_login();
-	$.loginview.opacity = 0.0;
-	
-
+	$.loginview.hide();
 });
 
 loginbutton.addEventListener("focus",function (e){
@@ -57,7 +49,7 @@ loginbutton.addEventListener("focus",function (e){
 });
 
 
-var logincancel = Ti.UI.createButton ({
+var logincancel = $.UI.create ("Button",{
 	height: 30,
 	width: '48%',
 	right: 10,
@@ -67,10 +59,10 @@ var logincancel = Ti.UI.createButton ({
 });
 
 logincancel.addEventListener("click",function (e){
-	$.loginview.opacity = 0.0;
+	$.loginview.hide();
 });
 
-var view = Ti.UI.createView({
+var view = $.UI.create("View",{
 	height: Ti.UI.SIZE,
 	width: Ti.UI.FILL,
 	left:10,
@@ -79,34 +71,37 @@ var view = Ti.UI.createView({
 	layout: "horizontal",
 });
 
-view.add(logincancel,loginbutton);
-$.loginview.add(labellogin,textfieldname,textfieldpass,view);
-
+	view.add(logincancel);
+	view.add(loginbutton);
+	$.loginview.add(labellogin);
+	$.loginview.add(textfieldname);
+	$.loginview.add(textfieldpass);
+	$.loginview.add(view);
 /* End - Login Part */
 
 /* Start - Sign Up Part */ 
-var labelname1 = Ti.UI.createLabel({
+var labelname1 = $.UI.create("Label",{
 	text: "Register",
+	color: "#7BBC31",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	height: 30,
 }) ;
 
-var patientbutton = Ti.UI.createButton ({
+var patientbutton = $.UI.create ("Button",{
 	height: Ti.UI.FILL,
 	width: "49%",
 	title: "PATIENT",
 	backgroundColor:"#7BBC31",
-	//right: 10,
 	left:3,
 	color: "white"
 });
 
 patientbutton.addEventListener("click",function (e){
-	viewpatientform.opacity = 0.8;
-	viewdoctorform.opacity = 0.0;
-	
+	viewpatientform.show();
+	viewdoctorform.hide();
 });
 
-var doctorbutton = Ti.UI.createButton ({
+var doctorbutton = $.UI.create("Button",{
 	height: Ti.UI.FILL,
 	width: "49%",
 	title: "DOCTOR",
@@ -115,113 +110,106 @@ var doctorbutton = Ti.UI.createButton ({
 });
 
 doctorbutton.addEventListener("click",function (e){
-	viewpatientform.opacity = 0.0;
-	viewdoctorform.opacity = 0.8;
-	
+	viewpatientform.hide();
+	viewdoctorform.show();
 });
 
-var viewlinehorz = Ti.UI.createView({
+var viewlinehorz = $.UI.create("View",{
 	height: Ti.UI.FILL,
 	width: 1,
 	backgroundColor: "black",
 });
 
-var viewselection = Ti.UI.createView({
+var viewselection = $.UI.create("View",{
 	height: 30,
 	width: Ti.UI.SIZE,
 	top: 10,
 	layout: "horizontal"
 });
 
-viewselection.add(patientbutton,viewlinehorz,doctorbutton);
+viewselection.add(patientbutton);
+viewselection.add(viewlinehorz);
+viewselection.add(doctorbutton);
 
 /*Patient Form*/
-var textfieldname1 = Ti.UI.createTextField({
-	height: 30,
-	width: Ti.UI.FILL,
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-	hintText: "Name"
+var textfieldname1 = $.UI.create("TextField",{
+	hintText: "Name",
+	hintTextColor:'#c0bfc0',
+	color: "black",
 });
 
-var textfieldemail = Ti.UI.createTextField({
-	height: 30,
-	width: Ti.UI.FILL,
-	top: 10,
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-	hintText: "Email Address: eg. abc@gmail.com"
+var textfieldemail = $.UI.create("TextField",{
+	hintText: "Email Address: eg. abc@gmail.com",
+	hintTextColor:'#c0bfc0',
+	color: "black",
+	
 });
 
-var textfieldpass1 = Ti.UI.createTextField({
-	height: 30,
-	width: Ti.UI.FILL,
-	top: 10,
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+var textfieldpass1 = $.UI.create("TextField",{
 	passwordMask:true,
-	hintText: "Enter Password"
+	hintText: "Enter Password",
+	hintTextColor:'#c0bfc0',
+	color: "black",
+	
 });
 
-var textfieldconfpass = Ti.UI.createTextField({
-	height: 30,
-	width: Ti.UI.FILL,
-	top: 10,
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+var textfieldconfpass = $.UI.create("TextField",{
 	passwordMask:true,
-	hintText: "Confirm Password"
+	hintText: "Confirm Password",
+	hintTextColor:'#c0bfc0',
+	color: "black",
+	
 });
 
-var viewpatientform = Ti.UI.createView({
+var viewpatientform = $.UI.create("View",{
 	height: Ti.UI.SIZE,
-	width: Ti.UI.SIZE,
-	left:10,
-	right: 10,
-	top: 10,
-	layout: "vertical"
+	width: Ti.UI.FILL,
+	layout: "vertical",
 });
 
-viewpatientform.add(textfieldname1,textfieldemail,textfieldpass1,textfieldconfpass);
+viewpatientform.add(textfieldname1);
+viewpatientform.add(textfieldemail);
+viewpatientform.add(textfieldpass1);
+viewpatientform.add(textfieldconfpass);
+
 
 /*Doctor Form*/
 
-var textfieldname2 = Ti.UI.createTextField({
-	height: 30,
-	width: Ti.UI.FILL,
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-	hintText: "Name"
+var textfieldname2 = $.UI.create("TextField",{
+	hintText: "Name",
+	hintTextColor:'#c0bfc0',
+	color: "black",
+	
 });
 
-var textfieldemail2 = Ti.UI.createTextField({
-	height: 30,
-	width: Ti.UI.FILL,
-	top: 10,
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-	hintText: "Email Address: eg. abc@gmail.com"
+var textfieldemail2 = $.UI.create("TextField",{
+	hintText: "Email Address: eg. abc@gmail.com",
+	hintTextColor:'#c0bfc0',
+	color: "black",
+	
 });
 
-var textfieldpass2 = Ti.UI.createTextField({
-	height: 30,
-	width: Ti.UI.FILL,
-	top: 10,
+var textfieldpass2 = $.UI.create("TextField",{
 	passwordMask:true,
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-	hintText: "Enter Password"
+	hintText: "Enter Password",
+	hintTextColor:'#c0bfc0',
+	color: "black",
+	
 });
 
-var textfieldconfpass2 = Ti.UI.createTextField({
-	height: 30,
-	width: Ti.UI.FILL,
+var textfieldconfpass2 = $.UI.create("TextField",{
 	passwordMask:true,
-	top: 10,
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-	hintText: "Confirm Password"
+	hintText: "Confirm Password",
+	hintTextColor:'#c0bfc0',
+	color: "black",
 });
 
-var spclbutton = Ti.UI.createTextField ({
-	height: 30,
-	top: 10,
-	width: Ti.UI.FILL,
-	//enabled: false,
+var spclbutton = $.UI.create ("TextField",{
+	enabled: false,
 	hintText: "Speciality",
-	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	hintTextColor:'#c0bfc0',
+	color: "black",
+	
 });
 
 spclbutton.addEventListener("click",function (e){
@@ -232,7 +220,6 @@ spclbutton.addEventListener("click",function (e){
   
   dialog.addEventListener('click', function(e){
   	var speText = spe[e.index];
-    //Ti.API.info('e.index: ' + e.index);
     console.log(speText);
     spclbutton.value = speText;
   });
@@ -240,22 +227,24 @@ spclbutton.addEventListener("click",function (e){
 });
 
 
-var viewdoctorform = Ti.UI.createView({
+var viewdoctorform = $.UI.create("View",{
 	height: Ti.UI.SIZE,
-	width: Ti.UI.SIZE,
-	left:10,
-	right: 10,
-	top: 10,
+	width: Ti.UI.FILL,
 	layout: "vertical",
-	opacity: 0
+	
 });
 
-viewdoctorform.add(textfieldname2,textfieldemail2,textfieldpass2,textfieldconfpass2,spclbutton);
+viewdoctorform.add(textfieldname2);
+viewdoctorform.add(textfieldemail2);
+viewdoctorform.add(textfieldpass2);
+viewdoctorform.add(textfieldconfpass2);
+viewdoctorform.add(spclbutton);
+viewdoctorform.hide();
 
 
 /*Sign Up and Cancel*/
 
-var signupbutton = Ti.UI.createButton ({
+var signupbutton = $.UI.create ("Button",{
 	height: 30,
 	width: "48%",
 	title: "SIGN UP",
@@ -263,7 +252,7 @@ var signupbutton = Ti.UI.createButton ({
 	color: "white"
 });
 
-var signupcancel = Ti.UI.createButton ({
+var signupcancel = $.UI.create ("Button",{
 	height: 30,
 	width: "48%",
 	title: "CANCEL",
@@ -274,10 +263,10 @@ var signupcancel = Ti.UI.createButton ({
 });
 
 signupcancel.addEventListener("click",function (e){
-	$.signupview.opacity = 0.0;
+	$.signupview.hide();
 });
 
-var view1 = Ti.UI.createView({
+var view1 = $.UI.create("View",{
 	height: Ti.UI.SIZE,
 	width: Ti.UI.SIZE,
 	left:10,
@@ -289,41 +278,39 @@ var view1 = Ti.UI.createView({
 
 /*For Patient and Doctor Form*/
 
-var viewpntdoc = Ti.UI.createView({
+var viewpntdoc = $.UI.create("View",{
 	height: Ti.UI.SIZE,
 	width: Ti.UI.SIZE,
-	left:10,
-	right: 10,
-	top: 10,
-	bottom: 10,
 });
 
-viewpntdoc.add(viewpatientform,viewdoctorform);
-
-view1.add(signupcancel,signupbutton);
-$.signupview.add(labelname1,viewselection,viewpntdoc,view1);
-//$.signupview.add(labelname1,viewselection,textfieldname1,textfieldemail,textfieldpass1,textfieldconfpass,view1);
+viewpntdoc.add(viewpatientform);
+viewpntdoc.add(viewdoctorform);
+view1.add(signupcancel);
+view1.add(signupbutton);
+$.signupview.add(labelname1);
+$.signupview.add(viewselection);
+$.signupview.add(viewpntdoc);
+$.signupview.add(view1);
 
 /* End - Sign Up Part */
 
 
 function init(){ 
-	Alloy.Globals.navWin = $.Win;
-	 $.win.add(loading.getView());
+	//Alloy.Globals.navWin = $.Win;
+	// $.win.add(loading.getView());
+	$.loginview.hide();
+	$.signupview.hide();
 }
 
 function doLogin(){
-	$.loginview.opacity = 0.8;
-	$.signupview.opacity= 0.0;
+	$.signupview.hide();
+	$.loginview.show();
 }
 
 function doSignUp(){
-	$.signupview.opacity= 0.8;
-	$.loginview.opacity = 0.0;
+	$.signupview.show();
+	$.loginview.hide();
 }
-
-
-
 
 function logoutAction(){ 
 	var dialog = Ti.UI.createAlertDialog({
@@ -389,52 +376,4 @@ function navToOption(){
 }
 
 /* Testing Login Fucntion*/
-function onload(responseText){
-	var result = JSON.parse(responseText); 
-	if(result.status == "error"){
-		Common.createAlert("Error", result.data[0]);
-		loading.finish();
-		return false;
-	}else{
-		loading.finish();
-		var userModel = Alloy.createCollection('user'); 
-		var arr = result.data;
-		userModel.saveArray(arr);
-   		Ti.App.Properties.setString('user_id', arr.id);
-   		Ti.App.Properties.setString('fullname', arr.fullname);
-   		Ti.App.Properties.setString('email', arr.email);
-   		Ti.App.Properties.setString('mobile', arr.mobile);
-   		Ti.App.Properties.setString('img_path', arr.img_path);
-   		Ti.App.Properties.setString('thumb_path', arr.thumb_path);
-   		Ti.App.Properties.setString('point', arr.point);
-   		
-		$.win.close();
-		Ti.App.fireEvent("home:refresh");
-		Alloy.Globals.Navigator.navGroup.open({navBarHidden: true, fullscreen: false});
-	}
-}
-
-function do_login(){
-	
-	var username     = textfieldname.value;
-	var password	 = textfieldpass.value;
-	if(username ==""){
-		Common.createAlert("Fail","Please fill in your username");
-		return false;
-	}
-	if(password =="" ){
-		Common.createAlert("Fail","Please fill in your password");
-		return false;
-	}
-	var device_token = Ti.App.Properties.getString('deviceToken');
-	console.log(device_token);
-	var params = { 
-	 	device_token: device_token,
-		username: username,  
-		password: password
-	};
-	//API.doLogin(params, $); 
-	loading.start();
-	API.callByPost({url: "doLoginUrl", params: params}, onload);
-}
 
