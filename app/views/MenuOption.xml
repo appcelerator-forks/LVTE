@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="win" title="Menu" backgroundImage="/images/background.png"  navBarHidden="true" >
+	<Window id="win" title="Menu" backgroundImage="/images/background.png"  navBarHidden="true" theme="Theme.NoActionBar" >
 		<ImageView image="/images/logo.png" top="20" left="10" opacity="0.8" width="80" height="80" onClick="doBack" />
 		 <View class="vert wfill hsize" bottom="20" >
 				<Label class="center whiteColor padding-lrt rounded-small" backgroundColor="#7BBC31" opacity="0.8" height="40" width="Ti.UI.FILL" >Disease Information</Label>

@@ -8,6 +8,10 @@ var numberkg;
 //var oriwidth;
 //var newwidth;
 
+function closeWindow(){
+	$.win.close();
+}
+
 function doBack(){
 	$.win.close();
 }
